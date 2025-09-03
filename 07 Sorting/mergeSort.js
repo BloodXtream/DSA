@@ -36,7 +36,7 @@ const mergeSort = (arr, low, high) => {
 }
 
 console.log(`Orignal array: [${arry}]`)
-console.log(`Sorted array: [${mergeSort(arry, 0, arry.length - 1)}]`)
+// console.log(`Sorted array: [${mergeSort(arry, 0, arry.length - 1)}]`)
 
 
 
@@ -44,7 +44,7 @@ console.log(`Sorted array: [${mergeSort(arry, 0, arry.length - 1)}]`)
 
 const mergeSlice = (left, right) => {
     let rslt = []
-    let i = 0; j = 0
+    let i = 0, j = 0
     while (i < left.length && j < right.length) {
         if (left[i] <= right[j]) {
             rslt.push(left[i])
@@ -54,7 +54,6 @@ const mergeSlice = (left, right) => {
             j++
         }
     }
-
     return [...rslt, ...left.slice(i), ...right.slice(j)]
 }
 
