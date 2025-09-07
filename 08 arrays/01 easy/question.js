@@ -20,4 +20,21 @@ const largestNumber = (arr) => {
 
 console.log(`Largest Elem: ${largestNumber(array)}`)
 
-const secondLargest = (arr) => { }
+
+// second largest in the array without sorting
+
+const secondLargest = (arr) => {
+    let first = -Infinity
+    let second = -Infinity
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > first) {
+            second = first
+            first = arr[i]
+        } else if (arr[i] > second && arr[i] !== first) {
+            second = arr[i]
+        }
+    }
+    return second
+}
+
+console.log(`Second Elem: ${secondLargest(array)}`)
