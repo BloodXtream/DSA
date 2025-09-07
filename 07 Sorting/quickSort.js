@@ -10,17 +10,47 @@ for (let i = 0; i < n; i++) {
 console.log(`orignalArray: [${arr}]`)
 
 
+// const partition = (arr, low, high) => {
+//     let pivot = arr[low]
+//     let i = low
+//     let j = high
+
+//     while (i < j) {
+//         // left side
+//         while (arr[i] <= pivot && i <= high) {
+//             i++
+//         }
+//         // right side
+//         while (arr[j] > pivot && j >= low) {
+//             j--
+//         }
+//         if (i < j) {
+//             [arr[i], arr[j]] = [arr[j], arr[i]]
+//         }
+//     }
+//     [arr[low], arr[j]] = [arr[j], arr[low]]
+//     return j
+// }
+
+// const quickSort = (arr, low, high) => {
+//     if (low < high) {
+//         let pivotIndex = partition(arr, low, high)
+//         // left Side
+//         quickSort(arr, low, pivotIndex - 1)
+//         // Right Side
+//         quickSort(arr, pivotIndex + 1, high)
+//     }
+//     return arr
+// }
+
 const partition = (arr, low, high) => {
     let pivot = arr[low]
     let i = low
     let j = high
-
     while (i < j) {
-        // left side
         while (arr[i] <= pivot && i <= high) {
             i++
         }
-        // right side
         while (arr[j] > pivot && j >= low) {
             j--
         }
@@ -35,12 +65,10 @@ const partition = (arr, low, high) => {
 const quickSort = (arr, low, high) => {
     if (low < high) {
         let pivotIndex = partition(arr, low, high)
-        // left Side
         quickSort(arr, low, pivotIndex - 1)
-        // Right Side
         quickSort(arr, pivotIndex + 1, high)
+        return arr
     }
-    return arr
 }
 
 console.log(`Sorted Array: [${quickSort(arr, 0, arr.length - 1)}]`)
