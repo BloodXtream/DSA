@@ -38,3 +38,4 @@ const secondLargest = (arr) => {
 }
 
 console.log(`Second Elem: ${secondLargest(array)}`)
+
